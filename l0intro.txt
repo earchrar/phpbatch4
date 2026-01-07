@@ -1,0 +1,27 @@
+=> PHP ( web server site )
+=> PHP ( Version 8.5 )
+    => 1. Classic 
+    => 2. OOP ( Object Oriented Programming ) 
+    => 3. MVC ( Modern View Controller )
+
+=> About PHP 
+    => Client ((User)frontend)
+        => HTML , CSS , Javascript 
+    => Server (backend) 
+        => PHP (web server) , Nodejs
+
+=> Use PHP 
+    => frontend + backend + Database 
+    => html,css,js + php + mysql 
+
+=> Install Window 
+    => (XAMPP/WAMP) => apache,php,mysql 
+
+=> Install Ubuntu 
+    => (LAMPP) => apache,php,mysql 
+
+=> Install Max 
+    => (XAMPP/WAMP) => apache,php,mysql 
+
+
+
