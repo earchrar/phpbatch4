@@ -352,6 +352,73 @@
         array_walk($colors,"myfunthree");
         echo "<pre>".print_r($colors,true)."</pre>";// ( [a] => orange [b] => orange [c] => orange [d] => orange [e] => orange )
 
+    // => 30. compact(val1,val2,val3) Function  
+
+        $name = "Aung Aung";
+        $age = "25";
+        $city = "Yangon";
+
+        $result = compact("name","age","city");
+        echo "<pre>".print_r($result,true)."</pre>";// ( [name] => Aung Aung [age] => 25 [city] => Yangon )
+
+    // => 31. range(start,end) Function 
+    // => range(start,end,step) 
+
+        $num1 = range(0,5);
+        echo "<pre>".print_r($num1,true)."</pre>";// ( [0] => 0 [1] => 1 [2] => 2 [3] => 3 [4] => 4 [5] => 5 )
+
+        $num2 = range(0,50,10);
+        echo "<pre>".print_r($num2,true)."</pre>";// ( [0] => 0 [1] => 10 [2] => 20 [3] => 30 [4] => 40 [5] => 50 )
+
+        $char1 = range("a","k");
+        echo "<pre>".print_r($char1,true)."</pre>";// ( [0] => a [1] => b [2] => c [3] => d [4] => e [5] => f [6] => g [7] => h [8] => i [9] => j [10] => k )
+
+        $char2 = range("k","g");
+        echo "<pre>".print_r($char2,true)."</pre>";// ( [0] => k [1] => j [2] => i [3] => h [4] => g )
+
+    // => 32. sizeof(array) Function 
+
+        $colors = ["red","green","blue","yellow","pink"];
+        echo sizeof($colors);// 5
+
+    // => 33. current() / pos() / next() / end() / prev() / reset()  Function 
+
+        $students = ["aung aung","maung maung","zaw zaw","tun tun","kyaw kyaw"];
+        echo current($students);// aung aung
+        echo pos($students);// aung aung 
+
+        // echo end($students); // kyaw kyaw 
+        // echo current($students); // kyaw kyaw 
+
+        echo current($students);// aung aung 
+        echo next($students);// maung maung 
+        echo current($students);// maung maung 
+        echo next($students); // zaw zaw 
+        echo prev($students);// maung maung 
+
+        echo end($students);// kyaw kyaw 
+        echo current($students);// kyaw kyaw 
+        echo prev($students);// tun tun 
+
+        echo reset($students);// aung aung 
+        echo current($students);// aung aung
+
+    // => 34. serialize() , unserialize() 
+
+        $staffs = [
+            ["aung aung","maung maung","kyaw kyaw","tun tun","zaw zaw"],
+            ["su su","yu yu","nu nu","aye aye","hla hla"]
+        ];
+
+        // echo "<pre>".print_r($staffs,true)."</pre>";
+
+        $seriadatas = serialize($staffs);
+        // echo $seriadatas;// a:2:{i:0;a:5:{i:0;s:9:"aung aung";i:1;s:11:"maung maung";i:2;s:9:"kyaw kyaw";i:3;s:7:"tun tun";i:4;s:7:"zaw zaw";}i:1;a:5:{i:0;s:5:"su su";i:1;s:5:"yu yu";i:2;s:5:"nu nu";i:3;s:7:"aye aye";i:4;s:7:"hla hla";}}
+        var_dump($seriadatas);// string(209) "a:2:{i:0;a:5:{i:0;s:9:"aung aung";i:1;s:11:"maung maung";i:2;s:9:"kyaw kyaw";i:3;s:7:"tun tun";i:4;s:7:"zaw zaw";}i:1;a:5:{i:0;s:5:"su su";i:1;s:5:"yu yu";i:2;s:5:"nu nu";i:3;s:7:"aye aye";i:4;s:7:"hla hla";}}"
+
+        $unseriadatas = unserialize($seriadatas);
+        echo "<pre>".print_r($unseriadatas,true)."</pre>";// ( [0] => Array ( [0] => aung aung [1] => maung maung [2] => kyaw kyaw [3] => tun tun [4] => zaw zaw ) [1] => Array ( [0] => su su [1] => yu yu [2] => nu nu [3] => aye aye [4] => hla hla ) )
+
     // ------------------------------------------------------------------------------------------------------------------------------------------------------
 
 

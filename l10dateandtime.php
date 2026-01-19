@@ -149,4 +149,38 @@
         
     // -------------------------------------------------------------------------------------
 
+    // date_create(timestamp,optional timezone) with date_format(timestamp,"Y/m/d") with date_diff(new,old) 
+        // eg : date_create(timestamp,timezone_open("Asia/Yangon"))
+
+        date_default_timezone_set("Asia/Yangon");
+
+        $getdate = getdate(); 
+        
+        $date1 = date_create("2023-01-10");
+        // echo date_format($date1,"Y/m/d");  // 2023/01/10
+        
+        $date2 = date_create("2024-01-1");
+        // echo date_format($date2,"Y/m/d");  // 2024/04/01
+        
+        $diffone = date_diff($date2,$date1);
+        // echo $diffone->format("%d days");// 22 days
+        // echo $diffone->format("%m month");// 2 month
+        // echo $diffone->format("%y year");// 1 year
+        // echo $diffone->format("%Y year");// 01 year
+        
+        $date3 = "{$getdate['mday']}-{$getdate['mon']}-{$getdate['year']}";
+        // $date3 = "{$getdate['year']}-{$getdate['mon']}-{$getdate['mday']}";
+        // echo $date3;// 19-1-2026
+        
+        $date4 = date_create($date3);
+        // echo date_format($date4,"Y/m/d");// 2026/01/19
+        
+        $diffone = date_diff($date4,$date2);
+        echo $diffone->format("%d days");// 18 days
+        echo $diffone->format("%m month");// 0 month
+        echo $diffone->format("%y year");// 2 year
+        echo $diffone->format("%Y year");// 02 year
+
+    // -------------------------------------------------------------------------------------
+
 ?>
